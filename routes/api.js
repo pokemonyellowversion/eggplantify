@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var photoCtrl = require('../controllers/photos');
 var userCtrl = require('../controllers/users');
 
 // Public routes (no auth required)

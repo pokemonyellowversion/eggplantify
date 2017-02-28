@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router', 'ngAnimate', 'ngResource'])
+angular.module('app', ['ui.router', 'ngAnimate'])
   .config(configRoutes)
   .run(runBlock);
 
@@ -44,6 +44,13 @@ function configRoutes($stateProvider, $urlRouterProvider, $httpProvider) {
       controller: 'PhotosController as photosCtrl',
       loginRequired: true
     })
+
+    .state('newPhoto', {
+      url: '/new',
+      templateUrl: 'templates/photos/new.html',
+      controller: 'NewController as newCtrl',
+      loginRequired: true
+    });
 
   $urlRouterProvider.otherwise('/home');
 }
