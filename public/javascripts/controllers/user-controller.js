@@ -8,14 +8,14 @@ function UserController($state, UserService) {
 
   vm.signup = function() {
     UserService.signup(vm.user).then(function() {
-      $state.go('home');
+      $state.go('photos');
     });
     vm.user = {};
   };
 
   vm.login = function() {
     UserService.login(vm.user).then(function() {
-      $state.go('home');
+      $state.go('photos');
     }, function() {
       $state.go('home');
     });

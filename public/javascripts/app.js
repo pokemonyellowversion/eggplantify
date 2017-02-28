@@ -38,5 +38,12 @@ function configRoutes($stateProvider, $urlRouterProvider, $httpProvider) {
       controller: 'UserController as userCtrl'
     })
 
+    .state('photos', {
+      url: '/gallery',
+      templateUrl: 'templates/photos/index.html',
+      controller: 'PhotosController as photosCtrl',
+      loginRequired: true
+    })
+
   $urlRouterProvider.otherwise('/home');
 }

@@ -1,4 +1,7 @@
-body {
+nav {
   background-color: #fcd7f6;
 }
 
+.home-image {
+  height: 200px;
+}
