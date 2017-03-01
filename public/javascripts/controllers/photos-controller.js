@@ -1,12 +1,12 @@
 angular.module('app')
 .controller('PhotosController', PhotosController);
 
-PhotosController.$inject = ['Photo'];
+PhotosController.$inject = ['PhotoService'];
 
-function PhotosController(Photo) {
+function PhotosController(PhotoService) {
   var vm = this;
   
-  vm.photos = Photo.query();
+  vm.photos = PhotoService.query();
 
   vm.delPhoto = function(photo) {
     photo.$delete(function() {

@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var photoSchema = new mongoose.Schema({
-  image: String,
+  imageURL: String,
   NSFW: Boolean,
   user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });

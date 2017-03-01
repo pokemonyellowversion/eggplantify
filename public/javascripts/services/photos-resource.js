@@ -1,8 +1,8 @@
 angular.module('app')
-  .factory('Photo', photoService);
+  .factory('PhotoService', PhotoService);
 
-photoService.$inject = ['$resource'];
+PhotoService.$inject = ['$resource'];
 
-function photoService($resource) {
+function PhotoService($resource) {
   return $resource('/api/photos/:id', {id: '@_id'});
 }

@@ -1,1 +1,10 @@
 <h1>Gallery</h1>
+<ul class="collection">
+  <li ng-repeat="photo in photosCtrl.photos track by $index" class="collection-item">
+    <div>
+    <img ng-src="{{photo.imageURL}}">
+      
+      <button ng-click="photosCtrl.delPhoto(photo)" class="secondary-content">delete</button>
+    </div>
+  </li>
+</ul>

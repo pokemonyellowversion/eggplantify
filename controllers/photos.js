@@ -2,9 +2,16 @@ var Photo = require('../models/photo');
 var ObjectId = require('mongoose').Schema.Types.ObjectId;
 
 module.exports = {
+  getAllPhotos,
   createPhoto,
   deletePhoto
 };
+
+function getAllPhotos(req, res, next) {
+  Photo.find({user: req.user._id}).exec().then(photos => {
+    res.json(photos);
+  }).catch(err => res.status(500).json(err));
+}
 
 function createPhoto(req, res, next) {
   req.body.user = req.user._id;

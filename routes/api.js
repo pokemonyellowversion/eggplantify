@@ -16,5 +16,9 @@ router.use(function(req, res, next) {
   return res.status(401).json({msg: 'not authenticated'});
 });
 
+// Protected routes (authentication required)
+router.get('/photos', photoCtrl.getAllPhotos);
+router.post('/photos', photoCtrl.createPhoto);
+router.delete('/photos/:id', photoCtrl.deletePhoto);
 
 module.exports = router;

@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router', 'ngAnimate'])
+angular.module('app', ['ui.router', 'ngAnimate', 'ngResource'])
   .config(configRoutes)
   .run(runBlock);
 

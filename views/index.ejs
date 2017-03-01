@@ -14,10 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js"></script> 
     <!-- <script src="https://sdk.clarifai.com/js/clarifai-latest.js"></script> -->
   <script>
-  var clarifai = new Clarifai.App(
-    CLIENT_ID,
-    CLIENT_SECRET
-  );
+
   
   // Checks for valid image type
   function validFile(image_name) {
@@ -96,5 +93,11 @@
     <script src="/javascripts/controllers/nav-controller.js"></script>
     <script src="/javascripts/controllers/user-controller.js"></script>
     <script src="/javascripts/controllers/new-controller.js"></script>
+    <script>
+        var clarifai = new Clarifai.App(
+    CLIENT_ID,
+    CLIENT_SECRET
+  );
+    </script>
   </body>
 </html>
