@@ -1,10 +1,41 @@
 <h2>Upload Photo</h2>
-<div class="row">
-  <!-- Upload on form submit or button click -->
-  <form ng-controller="NewController as newCtrl" name="form">
-    <!-- Single Image with validations -->
-    <div class="button" ngf-select ng-model="photo" name="photo" ngf-pattern="'image/*'"
-      ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
-      ngf-resize="{width: 100, height: 100}">Select</div>
+<div id="Model_Title" style="font-size:16px; margin-bottom:5px">Model</div>
+  <input type="hidden" id="hidden-val" name="hidden-val"/>
+  <input type="hidden" id="hidden-type" name="hidden-type"/>
+  <form action="" style="font-size:14px; margin-bottom:20px; float:left; margin-right:30px;">
+    <input type="radio" name="model" value="NSFW"> NSFW<br>
+    <br>
   </form>
-</div>
+  <div style="float:left">
+    <button onclick="
+      if(imgurl.value == '') { 
+        alert('Please enter an image URL!'); 
+        return;
+      } 
+      else if (!validFile(imgurl.value)) {
+        alert('Supported File Types: JPEG, PNG, TIFF, BMP');
+        return;
+      }
+      predict_click($('#imgurl').val(), 'url');" style="width:112px">Predict a URL!</button>
+    <input type="text" id="imgurl" placeholder="Image URL" size="80"/>
+    <br/><br/>
+    <button onclick="
+      if(filename.value == '') { 
+        alert('Please browse for a file!'); 
+        return;
+      } 
+      else if (!validFile(filename.value)) {
+        alert('Supported File Types: JPEG, PNG, TIFF, BMP');
+        return;
+      }
+      predict_click($('#filename').val(), 'file');">Predict a local file!</button>
+    <input type="file" id="filename" placeholder="Filename" size="80"/>
+    <button id="save-button">save</button>
+  </div>
+  <div style="margin-top:30px; margin-left:20px; margin-bottom:30px; clear:left; float:left">
+    <img id="img_preview" src="" width="400"/>
+    <br/>
+    <!-- <span id="add-image-button" style="visibility:hidden"><button onClick="addImageToApp()">Add image to application</button></span> -->
+    <!-- add to model, save to mongodb -->
+  </div>
+  <div id="concepts" class="conceptBox"></div>
