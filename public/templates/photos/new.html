@@ -1,21 +1,12 @@
-<p>{{test}}</p>
-  <div id="Title" style="font-size:48px; font-face:Arial; margin-bottom:20px;">Add Photo</div>
-
-  <!-- ADD IMG URL TO GO THROUGH CLARIFAI API FILTER -->
+<div id="new-title">Add Photo</div>
   
-  <div style="float:left">
+  <div id="url-input">
     <form ng-submit="newCtrl.doPredict()">
-      <button style="width:112px" type="submit">Predict!</button>
-    
+      <button type="submit">Predict!</button>
       <input type="text" ng-model="newCtrl.url" placeholder="Eggplantify" required/>
     </form>
-    
-    <br/><br/>
-    
   </div> 
   
-  <div style="margin-top:30px; margin-left:20px; margin-bottom:30px; clear:left; float:left">
-    <img ng-src="{{newCtrl.url}}" width="400"/>
-    <br/>
+  <div id="img-preview">
+    <img ng-src="{{newCtrl.url}}" />
   </div>
-  <div id="concepts" class="conceptBox"></div>
