@@ -4,7 +4,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', {
+    CLIENT_ID: process.env.CLARIFAI_CLIENT_ID,
+    CLIENT_SECRET: process.env.CLARIFAI_SECRET
+ });
 });
 
 module.exports = router;

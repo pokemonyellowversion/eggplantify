@@ -4,7 +4,8 @@ var ObjectId = require('mongoose').Schema.Types.ObjectId;
 module.exports = {
   getAllPhotos,
   createPhoto,
-  deletePhoto
+  deletePhoto,
+  getPhoto
 };
 
 function getAllPhotos(req, res, next) {
@@ -24,4 +25,10 @@ function deletePhoto(req, res, next) {
   Photo.findByIdAndRemove(req.params.id).then(deletedPhoto => {
     res.json(deletedPhoto);
   }).catch(err => res.status(400).json(err));
+}
+
+function getPhoto(req, res, next) {
+  Photo.findById(req.params.id).exec().then(photo => {
+    res.json(photo);
+  }).catch(err => res.status(500).json(err));
 }

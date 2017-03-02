@@ -18,6 +18,7 @@ router.use(function(req, res, next) {
 
 // Protected routes (authentication required)
 router.get('/photos', photoCtrl.getAllPhotos);
+router.get('/photos/:id', photoCtrl.getPhoto);
 router.post('/photos', photoCtrl.createPhoto);
 router.delete('/photos/:id', photoCtrl.deletePhoto);
 

@@ -6,6 +6,8 @@ PhotosController.$inject = ['PhotoService'];
 function PhotosController(PhotoService) {
   var vm = this;
   
+  vm.bogus = PhotoService.query();
+
   vm.photos = PhotoService.query();
 
   vm.delPhoto = function(photo) {
