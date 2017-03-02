@@ -1,65 +1,21 @@
-<h2>Add Photo</h2>
-<div id="Model_Title" style="font-size:16px; margin-bottom:5px">Model</div>
-  <input type="hidden" id="hidden-val" name="hidden-val"/>
-  <input type="hidden" id="hidden-type" name="hidden-type"/>
-<!--   <form ng-submit="newCtrl.addPhoto()" action="">
-    <input ng-model="newCtrl.photo.imageURL" autocomplete="off" id="imageURL" type="text" required>
-    <label for="imageURL">Image URL</label>
-  </form> -->
-
-  <!-- CHOOSES NSFW MODEL -->
-
-  <form action="" style="font-size:14px; margin-bottom:20px; float:left; margin-right:30px;">
-    <input type="radio" name="model" value="NSFW"> NSFW<br>
-    <br>
-  </form>
+<p>{{test}}</p>
+  <div id="Title" style="font-size:48px; font-face:Arial; margin-bottom:20px;">Add Photo</div>
 
   <!-- ADD IMG URL TO GO THROUGH CLARIFAI API FILTER -->
   
-  <!-- <form ng-submit="newCtrl.addPhoto()" action=""> -->
   <div style="float:left">
+    <form ng-submit="newCtrl.doPredict()">
+      <button style="width:112px" type="submit">Predict!</button>
     
-    <!-- <button onclick="
-      if(imgurl.value == '') { 
-        alert('Please enter an image URL!'); 
-        return;
-      } 
-      else if (!validFile(imgurl.value)) {
-        alert('Supported File Types: JPEG, PNG, TIFF, BMP');
-        return;
-      }
-      predict_click($('#imgurl').val(), 'url');" style="width:112px">Eggplantify!</button>
-
-    <input type="text" id="imgurl" placeholder="Image URL" size="80"/> -->
-
-    <!-- SAVE TO CREATE AND ADD A PHOTO -->
-
-  <form ng-submit="newCtrl.addPhoto(newCtrl.photo.imageURL)">
-    <input ng-model="newCtrl.photo.imageURL" autocomplete="off" id="imageURL" type="text" required>
-    <button>Save</button>
-  </form>
-
-      
-
+      <input type="text" ng-model="newCtrl.url" placeholder="Eggplantify" required/>
+    </form>
+    
     <br/><br/>
-    <!-- <button onclick="
-      if(filename.value == '') { 
-        alert('Please browse for a file!'); 
-        return;
-      } 
-      else if (!validFile(filename.value)) {
-        alert('Supported File Types: JPEG, PNG, TIFF, BMP');
-        return;
-      }
-      predict_click($('#filename').val(), 'file');">Predict a local file!</button>
-    <input type="file" id="filename" placeholder="Filename" size="80"/> -->
-  </div>
+    
+  </div> 
+  
   <div style="margin-top:30px; margin-left:20px; margin-bottom:30px; clear:left; float:left">
-    <img id="img_preview" src="" width="400"/>
+    <img ng-src="{{newCtrl.url}}" width="400"/>
     <br/>
-    <!-- <span id="add-image-button" style="visibility:hidden"><button onClick="addImageToApp()">Add image to application</button></span> -->
-    <!-- add to model, save to mongodb -->
   </div>
   <div id="concepts" class="conceptBox"></div>
-
- 

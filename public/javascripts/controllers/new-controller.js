@@ -1,26 +1,26 @@
 angular.module('app')
 .controller('NewController', NewController);
 
-NewController.$inject = ['$window', '$state', '$http', 'PhotoService'];
+NewController.$inject = ['$state', 'PhotoService'];
 
-function NewController($window, $state, $http, PhotoService) {
+function NewController($state, PhotoService) {
   var vm = this;
 
-  vm.addPhoto = function(photo) {
-    PhotoService.save({imageURL: photo}, function(photo) {
-      $state.go('photos');
+  vm.doPredict = function() {
+    if (!validFile(vm.url)) {
+      alert('Supported File Types: JPEG, PNG, TIFF, BMP');
+      return;
+    }
+    clarifai.models.predict(Clarifai.NSFW_MODEL, {url: vm.url})
+    .then(function(resp) {
+      PhotoService.save({
+        imageURL: vm.url,
+        NSFW: resp.outputs[0].data.concepts.find(c => c.name === 'nsfw').value
+      }, function() {
+        $state.go('photos');
+      });
     });
-    // console.log('hi');
-    // $http({
-    //   url: '/api/photos/',
-    //   method: 'POST',
-    //   data: {imageURL: photo}
-    // }).then(function(response) {
-    //   console.log(response);
-    //   $state.go('home');
-    // }).catch(function(error) {
-    //   console.log(error);
-    // })
-
   };
+
+
 }

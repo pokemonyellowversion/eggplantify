@@ -13,24 +13,6 @@ function predict_click(value, source) {
     document.getElementById("hidden-val").value = value;
   }
     
-  else if(source == 'file') {
-    var preview = document.querySelector('#img_preview');
-    var file    = document.querySelector('input[type=file]').files[0];
-    var reader  = new FileReader();
-
-    // load local file picture
-    reader.addEventListener("load", function () {
-      preview.src = reader.result;
-      var local_base64 = reader.result.split("base64,")[1];
-      doPredict({ base64: local_base64 });
-      document.getElementById("hidden-type").value = "base64";
-      document.getElementById("hidden-val").value = local_base64;
-    }, false);
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-  } 
 }
 
 /*
@@ -56,6 +38,8 @@ function doPredict(value) {
         
         for (let i = 0; i < tag_array.length; i++) 
           concept_names += '<li>' + tag_array[i].name + ': <i>' + tag_array[i].value + '</i></li>';
+            // if(concept_names[0].tag_array[i].value > 0.8);
+            // return '<li> NSFW </li>';
           
         tag_count=tag_array.length;
       }
@@ -66,7 +50,7 @@ function doPredict(value) {
         
       concept_names += '</ul>';
       $('#concepts').html(concept_names);
-      
+      console.log(response.rawData.outputs[0].input.data.image.url);
       document.getElementById("add-image-button").style.visibility = "visible";
     },
     function(err) {
@@ -84,41 +68,6 @@ function getSelectedModel() {
   var model = document.querySelector('input[name = "model"]:checked').value;
     
   if(model == "NSFW")
+    console.log('woot');
     return Clarifai.NSFW_MODEL;
 }
-
-/*
-  Purpose: Add an image to an application after user clicks button
-  Args:
-    index - # of the image in the session
-*/
-// function addImageToApp() {
-//   var img_type = document.getElementById("hidden-type").value;
-//   var img_value = document.getElementById("hidden-val").value;
-  
-//   if(img_type == "url") {
-//     clarifai.inputs.create({
-//       url: img_value
-//     }).then(
-//       function(response) {
-//         alert("Image successfully added!");
-//       },
-//       function(err) {
-//         alert(err);
-//       }
-//     );
-//   }
-  
-//   else if(img_type == "base64") {
-//     clarifai.inputs.create({
-//       base64: img_value
-//     }).then(
-//       function(response) {
-//         alert("Image successfully added!");
-//       },
-//       function(err) {
-//         alert("Error Adding Image. Check to see if it is a duplicate.");
-//       }
-//     );
-//   }
-// }
