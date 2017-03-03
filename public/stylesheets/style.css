@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans');
-/*font-family: 'Open Sans', sans-serif;*/
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 /*INDEX*/
 
 nav {
@@ -77,13 +76,10 @@ button.btn.waves-effect {
   width: 400px;
 }
 
-.img-preview {
-/*  margin: auto;*/
-/*  overflow-y:hidden;*/
-}
+/*SHOW PAGE*/
 
-#img-preview.img {
-  width:400px;
+.denied-img {
+  height: 400px;
 }
 
 /*GALLERY PAGE*/
@@ -103,10 +99,6 @@ button.btn.waves-effect {
 .img-delete {
   position: absolute;
   width: 35px;
-}
-
-.tag {
-  position: absolute;
 }
 
 .img-wrap {

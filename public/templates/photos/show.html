@@ -1,5 +1,7 @@
-<div>{{photoCtrl.photo.NSFW}}</div>
-
 <center>
-    <img ng-src="{{photoCtrl.photo.imageURL}}" ng-if="photoCtrl.photo.NSFW < 0.8">
+  <div ng-show="photoCtrl.photo.NSFW > 0.8">
+    <h4>#PUSSYPASSDENIED</h4>
+    <img class="denied-img" src="/images/denied.png">
+  </div>
+  <img ng-src="{{photoCtrl.photo.imageURL}}" ng-if="photoCtrl.photo.NSFW < 0.8">
 </center>
