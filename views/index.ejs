@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
-    <title>Eggplantify</title>
+    <title>eggplantify</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
@@ -44,13 +44,13 @@
       <nav>
         <div class="nav-wrapper">
           <ul class="left">
-            <li><a ui-sref="home" class="left brand-logo">Eggplantify</a></li>
+            <li><image class="eggplant-emoji" src="/images/eggplant-emoji.png"><a ui-sref="home" class="left brand-logo">eggplantify</a></li>
           </ul>
           <ul class="right">
-            <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a id="new-photo" ui-sref="newPhoto">New Photo</a></li>
-            <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a id="gallery" ui-sref="photos">Gallery</a></li>
-            <li ng-hide="navCtrl.isLoggedIn()"><a class="dropdown-button" href="#!" data-activates="logged-out-dropdown"><i class="material-icons right">&#xE7FF;</i></a></li>
-            <li ng-show="navCtrl.isLoggedIn()"><a class="dropdown-button" href="#!" data-activates="logged-in-dropdown"><i class="material-icons right">&#xE7FF;</i></a></li>
+            <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a id="new-photo" ui-sref="newPhoto"><image src="/images/new-photo.png"></a></li>
+            <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a id="gallery" ui-sref="photos"><image src="/images/gallery.png"></a></li>
+            <li ng-hide="navCtrl.isLoggedIn()"><a class="dropdown-button" href="#!" data-activates="logged-out-dropdown"><image src="/images/logged-out.png"></a></li>
+            <li ng-show="navCtrl.isLoggedIn()"><a class="dropdown-button" href="#!" data-activates="logged-in-dropdown"><image src="/images/logged-in.png"></a></li>
           </ul>
         </div>
       </nav>

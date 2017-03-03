@@ -23,9 +23,6 @@ function NewController($state, PhotoService) {
           }
         $state.go('photo', {id: photo._id});
       });
-
     });
   };
-
-
 }

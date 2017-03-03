@@ -2,16 +2,15 @@
 <div class="row">
   <div ng-repeat="photo in photosCtrl.photos track by $index" class="col s12 m6 l3">
     
-      <div class="card">
-        <div class="card-image">
-          <img ng-src="{{photo.imageURL}}">
-        </div>
-        <span>
+          <img class="img-circle" ng-src="{{photo.imageURL}}">
+
+<!--         <span>
           {{(photo.NSFW*100).toFixed(2)}}
           {{photo.tag}}
-        </span>
+        </span> -->
         <i ng-click="photosCtrl.delPhoto(photo)" class="small material-icons">delete</i>
-      </div>
     
   </div>
 </div>
+
+<h4 ng-hide="photosCtrl.photos.length" class="center-align">You have no Photos - click on the camera icon to add a photo!</h4>

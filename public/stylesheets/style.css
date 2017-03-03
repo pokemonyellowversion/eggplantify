@@ -1,21 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans');
+/*font-family: 'Open Sans', sans-serif;*/
 /*INDEX*/
 
 nav {
-  background-color: #fcd7f6;
+  background-color: white;
+  box-shadow: none;
+  height:100px;
+  color:#fcd7f6;
 }
 
 a.left.brand-logo {
-  padding: 15px 0 0 20px;
+  padding-top: 15px;
+  font-family: 'Bree Serif', serif;
+  color: #fcd7f6;
+  font-size: 60px;
 }
 
-.home-image {
-  height: 200px;
+.eggplant-emoji {
+  width: 90px;
+/*  padding-left: 30px;*/
 }
 
-body { 
-  font-family: sans-serif; 
+.dropdown-content li>a {
+  color: rgba(0,0,0,0.87);
+}
+
+.dropdown-button.active {
+  padding: 0;
+}
+
+body {  
   height: 100%;
-  font-family: "Helvetica";
 }
 
 ul {
@@ -25,6 +40,16 @@ ul {
   columns: 1;
   -webkit-columns: 1;
   -moz-columns: 1;
+}
+
+ul.left {
+  padding-left: 35px;
+  padding-top: 20px;
+}
+
+ul.right {
+  padding-top: 30px;
+  padding-right: 35px;
 }
 
 li {
@@ -38,18 +63,17 @@ li {
 }
 
 ul li i{
-  font-family: "Helvetica";
-  font-style: normal;
   font-size: 14px;
+  color:#2E4157;
 }
 
-#new-photo {
+/*#new-photo {
   padding-top: 20px;
 }
 
 #gallery {
   padding-top: 20px;
-}
+}*/
 
 div.container.ng-scope {
   margin: 0 auto;
@@ -57,28 +81,51 @@ div.container.ng-scope {
 
 /*NEW PAGE*/
 
-#new-title {
-  font-size: 48px;
+button.btn.waves-effect {
+  background-color: purple;
 }
 
 #url-input {
   float:left;
+  width:400px;
 }
 
 #img-preview {
   margin-top:30px; 
   margin-left:20px; 
   margin-bottom:30px; 
-  clear:left; 
-  float:left;
+/*  clear:right; 
+  float:right;*/
+  border-style: solid;
+  border-width: 5px;
 }
 
 #img-preview.img {
   width:400px;
 }
 
-GALLERY PAGE
+.overlay {
+/*    height: 100%;
+    width: 0;*/
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+/*    overflow-x: hidden;*/
+    transition: 0.5s;
+}
+
+/*GALLERY PAGE*/
 
 .material-icons {
   float: right;
+}
+
+.img-circle {
+  border-radius: 50%;
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
 }
