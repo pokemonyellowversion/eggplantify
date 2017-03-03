@@ -1,7 +1,5 @@
 <div>{{photoCtrl.photo.NSFW}}</div>
 
 <center>
-  <div class="img-preview">
-    <img ng-src="{{photoCtrl.photo.imageURL}}" ng-if="photo.NSFW < 0.8">
-  </div>
+    <img ng-src="{{photoCtrl.photo.imageURL}}" ng-if="photoCtrl.photo.NSFW < 0.8">
 </center>
