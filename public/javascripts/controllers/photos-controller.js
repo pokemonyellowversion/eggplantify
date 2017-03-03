@@ -1,9 +1,9 @@
 angular.module('app')
 .controller('PhotosController', PhotosController);
 
-PhotosController.$inject = ['PhotoService', '$state'];
+PhotosController.$inject = ['PhotoService'];
 
-function PhotosController(PhotoService, $state) {
+function PhotosController(PhotoService) {
   var vm = this;
 
   vm.photos = PhotoService.query();

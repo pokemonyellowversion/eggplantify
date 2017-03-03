@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
-/*INDEX*/
+
+/*INDEX PAGE*/
 
 nav {
   background-color: white;
@@ -18,7 +19,7 @@ a.left.brand-logo {
   width: 90px;
 }
 
-.dropdown-content li>a {
+.dropdown-content li > a {
   color: rgba(0,0,0,0.87);
 }
 
@@ -52,12 +53,12 @@ li {
   font-weight: 500;
   font-size: 15px;
   color: #2E4157;
-  overflow:auto;
+  overflow: auto;
 }
 
 ul li i{
   font-size: 14px;
-  color:#2E4157;
+  color: #2E4157;
 }
 
 div.container.ng-scope {
@@ -68,10 +69,10 @@ div.container.ng-scope {
 /*NEW PAGE*/
 
 button.btn.waves-effect {
-  background-color: purple;
+  background-color: #800080;
 }
 
-#url-input {
+#url-input {r
   float: left;
   width: 400px;
 }
