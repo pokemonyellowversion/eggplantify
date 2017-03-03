@@ -11,14 +11,14 @@ A full stack SPA app that allows users to upload images with a URL, filter NSFW 
 
 Technologies used are MEAN (Node, Express, MongoDB and AngularJS) stack, HTML and CSS.
 Emoji library from EmojiOne and API from Clarifai.
-<a href="https://trello.com/b/aVWAYDfG/eggplantify">Trello</a>
+<a href="https://trello.com/b/aVWAYDfG/eggplantify">Trello.</a>
 
 <b>[Getting Started]</b>
 
 Click <a href="https://eggplantify.herokuapp.com">here</a> to go to the app.
-1. Sign up to create an account. 
-2. Click on the camera icon to add a photo.
-3. Add a URL and hit "Eggplantify".
+1. Sign up to create an account.<br> 
+2. Click on the camera icon to add a photo.<br>
+3. Add a URL and hit "Eggplantify".<br>
 4. Click on the image icon to view and/or delete your images in your gallery.
 
 <b>[Next Steps]</b>
