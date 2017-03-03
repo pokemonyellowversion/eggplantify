@@ -51,9 +51,8 @@ ul li i{
   padding-top: 20px;
 }
 
-.collection {
-  border: none;
-  border-bottom: none;
+div.container.ng-scope {
+  margin: 0 auto;
 }
 
 /*NEW PAGE*/
@@ -76,4 +75,10 @@ ul li i{
 
 #img-preview.img {
   width:400px;
+}
+
+GALLERY PAGE
+
+.material-icons {
+  float: right;
 }

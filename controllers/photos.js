@@ -5,7 +5,8 @@ module.exports = {
   getAllPhotos,
   createPhoto,
   deletePhoto,
-  getPhoto
+  getPhoto,
+  updatePhoto
 };
 
 function getAllPhotos(req, res, next) {
@@ -29,6 +30,12 @@ function deletePhoto(req, res, next) {
 
 function getPhoto(req, res, next) {
   Photo.findById(req.params.id).exec().then(photo => {
+    res.json(photo);
+  }).catch(err => res.status(500).json(err));
+}
+
+function updatePhoto(req, res, next) {
+  Photo.findByIdAndUpdate(req.params.id, req.body).exec().then(photo => {
     res.json(photo);
   }).catch(err => res.status(500).json(err));
 }

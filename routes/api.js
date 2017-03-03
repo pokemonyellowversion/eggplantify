@@ -21,5 +21,6 @@ router.get('/photos', photoCtrl.getAllPhotos);
 router.get('/photos/:id', photoCtrl.getPhoto);
 router.post('/photos', photoCtrl.createPhoto);
 router.delete('/photos/:id', photoCtrl.deletePhoto);
+router.put('/photos/:id', photoCtrl.updatePhoto);
 
 module.exports = router;

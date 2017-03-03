@@ -1,14 +1,16 @@
-<h1>Gallery</h1>
-<div class="collection row">
-  <div ng-repeat="photo in photosCtrl.photos track by $index" class="collection-item col s12 m6 l3">
+{{photosCtrl.nsfwAverage()}}
+<div class="row">
+  <div ng-repeat="photo in photosCtrl.photos track by $index" class="col s12 m6 l3">
     
       <div class="card">
         <div class="card-image">
           <img ng-src="{{photo.imageURL}}">
         </div>
-        <div class="card-action">
-          <button ng-click="photosCtrl.delPhoto(photo)" class="secondary-content">delete</button>
-        </div>
+        <span>
+          {{(photo.NSFW*100).toFixed(2)}}
+          {{photo.tag}}
+        </span>
+        <i ng-click="photosCtrl.delPhoto(photo)" class="small material-icons">delete</i>
       </div>
     
   </div>
