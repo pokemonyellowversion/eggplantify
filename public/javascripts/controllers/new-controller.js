@@ -17,12 +17,15 @@ function NewController($state, PhotoService) {
         imageURL: vm.url,
         NSFW: resp.outputs[0].data.concepts.find(c => c.name === 'nsfw').value
       }, function(photo) {
-          if (photo.NSFW > 0.5) {
-            alert('Because I naughty naughty');
-            return;
-          }
         $state.go('photo', {id: photo._id});
       });
     });
   };
+
+  $(document).ready(function() {
+    $('#loader').hide();  
+    $('#predict-form').submit(function() {
+      $('#loader').show();
+    }); 
+  });
 }

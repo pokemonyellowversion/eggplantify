@@ -1,11 +1,11 @@
 <div>{{photoCtrl.photo.NSFW}}</div>
 
-<img ng-src="{{photoCtrl.photo.imageURL}}">
+<center><img ng-src="{{photoCtrl.photo.imageURL}}"></center>
 
 <!-- <form ng-submit="photoCtrl.updatePhoto()"> -->
   <div>
     <input ng-model="photoCtrl.photo.tag" autocomplete="off" type="textarea" placeholder="tag">
+    <button class="btn btn-default" ng-click="photoCtrl.edit(photo)">Add Tag</button>
   </div>
-  <button class="btn btn-default" ng-click="photoCtrl.edit(photo)">Add Tag</button>
 <!--  </form> -->
 {{photoCtrl.photo.tag}}

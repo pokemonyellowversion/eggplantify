@@ -1,15 +1,11 @@
-{{photosCtrl.nsfwAverage()}}
+<!-- {{photosCtrl.nsfwAverage()}} -->
 <div class="row">
-  <div ng-repeat="photo in photosCtrl.photos track by $index" class="col s12 m6 l3">
-    
-          <img class="img-circle" ng-src="{{photo.imageURL}}">
-
-<!--         <span>
-          {{(photo.NSFW*100).toFixed(2)}}
-          {{photo.tag}}
-        </span> -->
-        <i ng-click="photosCtrl.delPhoto(photo)" class="small material-icons">delete</i>
-    
+  <div ng-repeat="photo in photosCtrl.photos track by $index" ng-if="photo.NSFW < 0.8" class="col s12 m6 l3">
+  <div id="img-wrap">  
+    <img class="img-delete" ng-click="photosCtrl.delPhoto(photo)" src="/images/delete.png">
+    <img class="img-circle" ng-src="{{photo.imageURL}}">
+    <span>{{(photo.NSFW*100).toFixed(2)}}</span>
+  </div>  
   </div>
 </div>
 
