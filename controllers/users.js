@@ -41,4 +41,3 @@ function logout(req, res, next) {
 function me(req, res, next) {
   res.json(req.user);
 }
-

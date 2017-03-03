@@ -9,7 +9,6 @@ router.get('/users/logout', userCtrl.logout);
 router.post('/users', userCtrl.create);
 router.get('/users/me', userCtrl.me);
 
-
 // Auth middleware (routes below need authentication)
 router.use(function(req, res, next) {
   if (req.user) return next();
@@ -21,6 +20,5 @@ router.get('/photos', photoCtrl.getAllPhotos);
 router.get('/photos/:id', photoCtrl.getPhoto);
 router.post('/photos', photoCtrl.createPhoto);
 router.delete('/photos/:id', photoCtrl.deletePhoto);
-router.put('/photos/:id', photoCtrl.updatePhoto);
 
 module.exports = router;

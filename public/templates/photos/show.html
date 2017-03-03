@@ -1,11 +1,7 @@
 <div>{{photoCtrl.photo.NSFW}}</div>
 
-<center><img ng-src="{{photoCtrl.photo.imageURL}}"></center>
-
-<!-- <form ng-submit="photoCtrl.updatePhoto()"> -->
-  <div>
-    <input ng-model="photoCtrl.photo.tag" autocomplete="off" type="textarea" placeholder="tag">
-    <button class="btn btn-default" ng-click="photoCtrl.edit(photo)">Add Tag</button>
+<center>
+  <div class="img-preview">
+    <img ng-src="{{photoCtrl.photo.imageURL}}" ng-if="photo.NSFW < 0.8">
   </div>
-<!--  </form> -->
-{{photoCtrl.photo.tag}}
+</center>

@@ -5,15 +5,14 @@
 nav {
   background-color: white;
   box-shadow: none;
-  height:100px;
-  color:#fcd7f6;
+  height: 100px;
+  color: #fcd7f6;
 }
 
 a.left.brand-logo {
-  padding-top: 15px;
-  font-family: 'Bree Serif', serif;
+  font: 60px 'Bree Serif', serif;
   color: #fcd7f6;
-  font-size: 60px;
+  top: 10px;
 }
 
 .eggplant-emoji {
@@ -26,10 +25,6 @@ a.left.brand-logo {
 
 .dropdown-button.active {
   padding: 0;
-}
-
-body {  
-  height: 100%;
 }
 
 ul {
@@ -47,8 +42,8 @@ ul.left {
 }
 
 ul.right {
-  padding-top: 30px;
   padding-right: 35px;
+  padding-top: 30px;
 }
 
 li {
@@ -68,55 +63,30 @@ ul li i{
 
 div.container.ng-scope {
   margin: 0 auto;
+  padding-top: 150px;
 }
 
 /*NEW PAGE*/
-
-.new-page {
-  margin-top: 130px;
-}
 
 button.btn.waves-effect {
   background-color: purple;
 }
 
 #url-input {
-  float:left;
-  width:400px;
+  float: left;
+  width: 400px;
 }
 
-#img-preview {
-  margin-top:30px; 
-  margin-left:20px; 
-  margin-bottom:30px; 
-/*  clear:right; 
-  float:right;*/
-  border-style: solid;
-  border-width: 5px;
+.img-preview {
+  margin: auto;
+  overflow-y:hidden;
 }
 
 #img-preview.img {
   width:400px;
 }
 
-.overlay {
-/*    height: 100%;
-    width: 0;*/
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
-/*    overflow-x: hidden;*/
-    transition: 0.5s;
-}
-
 /*GALLERY PAGE*/
-
-.material-icons {
-  float: right;
-}
 
 .img-circle {
   border-radius: 50%;
@@ -127,7 +97,7 @@ button.btn.waves-effect {
 }
 
 .img-circle:hover {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .img-delete {
