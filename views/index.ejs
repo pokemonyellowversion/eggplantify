@@ -14,13 +14,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js"></script> 
     <script src="/javascripts/clarifai.js"></script>
+    <script src="/javascripts/keys.js"></script>
     <script>
-      var CLIENT_ID = '<%= CLIENT_ID %>';
-      var CLIENT_SECRET = '<%= CLIENT_SECRET %>';
       var clarifai = new Clarifai.App(
-        CLIENT_ID,
-        CLIENT_SECRET
-      );
+          CLIENT_ID,
+          CLIENT_SECRET
+        );
       // Checks for valid image type
       function validFile(image_name) {
         var lower_image_name = image_name.toLowerCase();
