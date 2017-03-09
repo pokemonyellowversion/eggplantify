@@ -59,5 +59,5 @@ function configRoutes($stateProvider, $urlRouterProvider, $httpProvider) {
       loginRequired: true
     });
 
-  $urlRouterProvider.otherwise('/gallery');
+  $urlRouterProvider.otherwise('/home');
 }
