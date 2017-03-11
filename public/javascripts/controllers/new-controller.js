@@ -17,7 +17,7 @@ function NewController($state, PhotoService) {
         imageURL: vm.url,
         NSFW: resp.outputs[0].data.concepts.find(c => c.name === 'nsfw').value
       }, function(photo) {
-        $state.go('photos');
+        $state.go('photo', {id: photo._id});
       });
     });
   };
