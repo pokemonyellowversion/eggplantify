@@ -1,22 +1,54 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 
-@media only screen and (min-width: 993px) {
-  .container {
-    width: 80%;
+/*min two columns*/
+
+@media only screen and (min-width: 0px) {
+  .row .col.s {
+    width: 50%; 
+  }
+  nav .nav-wrapper i {
+    font-size: 30px;
+    display: inline-block;
+  }
+  .left.brand-logo {
+    margin: 0 auto;
+    float: none;
+    display: inline-block;
   }
 }
 
-@media only screen and (min-width: 601px) {
-  .row .col.m6 {
+/*two columns*/
+
+@media only screen and (min-width: 320px) {
+  nav .nav-wrapper i {
+    font-size: 40px;
+  }
+  .row .col.s {
     width: 50%;
   }
+  .container {
+    width: 85%;
+  }
 }
 
-@media only screen and (min-width: 900px) {
+/*three columns*/
+
+@media only screen and (min-width: 820px) {
   .row .col.m4 {
     width: 33%;
   }
+  /*.left.brand-logo {
+    font-size: 3em;
+  }*/
+  i.material-icons {
+    font-size: 40px;
+  }
+  .container {
+    width: 70%;
+  }
 }
+
+/*four columns*/
 
 @media only screen and (min-width: 1150px) {
   .row .col.l3 {
@@ -24,7 +56,18 @@
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 64px;
+    line-height: 64px;
+  }
+}
+
 /*INDEX PAGE*/
+
+body {
+  min-width: 340px;
+}
 
 nav {
   background-color: white;
@@ -33,17 +76,20 @@ nav {
   color: #fcd7f6;
 }
 
-a.left.brand-logo {
-  font: 60px 'Bree Serif', serif;
+nav .brand-logo {
+  min-width: 230px;
+  font-family: 'Bree Serif', serif;
   color: #fcd7f6;
-  top: 10px;
-  position: initial;
+  padding-top: 2%;
+  font-size: 7vw;
 }
 
 .eggplant-emoji {
   width: 10%;
+  min-width: 45px;
   display: inline-block;
   float: left;
+  margin-left: 20px;
 }
 
 .dropdown-content li > a {
@@ -63,14 +109,30 @@ ul {
   -moz-columns: 1;
 }
 
-ul.left {
-  padding-left: 35px;
-  padding-top: 20px;
+.nav-left li {
+  width: auto;
+  height: auto;
 }
 
-ul.right {
-  padding-right: 35px;
-  padding-top: 30px;
+ul.left {
+  padding: 20px 0 35px 0;
+}
+
+nav i {
+  display: inline-block;
+}
+
+i.material-icons {
+  color: black;
+  font-size: 0;
+  padding-top: 25%;
+  display: inline-block;
+}
+
+ul.nav-icons {
+  padding: 30px 35px 0 0;
+  display: inline-block;
+  float: right;
 }
 
 li {
@@ -90,9 +152,12 @@ ul li i{
 
 div.container.ng-scope {
   margin: 0 auto;
-  padding-top: 10%;
+  padding-top: 8%;
 }
 
+.side-nav {
+  width: 30%;
+}
 /*NEW PAGE*/
 
 button.btn.waves-effect {
@@ -102,6 +167,7 @@ button.btn.waves-effect {
 #url-input {r
   float: left;
   width: 400px;
+  padding-top: 15vh;
 }
 
 /*SHOW PAGE*/
@@ -114,10 +180,14 @@ button.btn.waves-effect {
 
 .img-circle {
   border-radius: 50%;
-  width: 230px;
-  height: 230px;
+  width: 16vw;
+  height: 16vw;
+  min-width: 150px;
+  min-height: 150px;
+  overflow: hidden;
   object-fit: cover;
   position: relative;
+  margin-top: 20px;
 }
 
 .img-circle:hover {
@@ -127,8 +197,4 @@ button.btn.waves-effect {
 .img-delete {
   position: absolute;
   width: 35px;
-}
-
-.img-wrap {
-  position: relative;
 }

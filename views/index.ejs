@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -13,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js"></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
     <script src="/javascripts/clarifai.js"></script>
     <script src="/javascripts/keys.js"></script>
     <script>
@@ -29,7 +31,7 @@
   </head>
   <body ng-controller="NavController as navCtrl">
     
-    <ul id="logged-out-dropdown" class="dropdown-content">
+    <ul id="logged-out-dropdown" class="dropdown-content collapsible-body">
       <li><a ui-sref="login">Log In</a></li>
       <li><a ui-sref="signup">Sign Up</a></li>
     </ul>
@@ -43,18 +45,25 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <ul class="left">
-            <li><image class="eggplant-emoji responsive-img" src="/images/eggplant-emoji.png"><a ui-sref="photos" class="left brand-logo">eggplantify</a></li>
-          </ul>
-          <ul class="right">
+          <a class="brand-logo" ui-sref="photos"><image class="eggplant-emoji responsive-img" src="/images/eggplant-emoji.png"><span>eggplantify</span></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          
+          <ul class="nav-icons right hide-on-med-and-down">
             <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a id="new-photo" ui-sref="newPhoto"><image src="/images/new-photo.png"></a></li>
             <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a id="gallery" ui-sref="photos"><image src="/images/gallery.png"></a></li>
             <li ng-hide="navCtrl.isLoggedIn()"><a class="dropdown-button" href="#!" data-activates="logged-out-dropdown"><image src="/images/logged-out.png"></a></li>
             <li ng-show="navCtrl.isLoggedIn()"><a class="dropdown-button" href="#!" data-activates="logged-in-dropdown"><image src="/images/logged-in.png"></a></li>
           </ul>
+          
         </div>
       </nav>
     </div>
+        <ul class="side-nav collapsible collapsible-accordion" id="mobile-demo">
+          <a ng-show="navCtrl.isLoggedIn()" ui-sref="newPhoto">New Photo</a>
+          <a ng-show="navCtrl.isLoggedIn()" ui-sref="photos">Gallery</a>
+          <a ng-hide="navCtrl.isLoggedIn()" class="dropdown-button" data-activates="logged-out-dropdown">Log In</a>
+          <a ng-show="navCtrl.isLoggedIn()" class="dropdown-button collapsible-header" data-activates="logged-in-dropdown">Log Out</a>
+        </ul>
 
     <div ui-view class="container"></div>
 
