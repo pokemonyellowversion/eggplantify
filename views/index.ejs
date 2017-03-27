@@ -57,13 +57,13 @@
         </div>
       </nav>
     </div>
-        <ul class="side-nav collapsible collapsible-accordion" id="mobile-demo">
-          <a ng-show="navCtrl.isLoggedIn()" ui-sref="newPhoto">New Photo</a>
-          <a ng-show="navCtrl.isLoggedIn()" ui-sref="photos">Gallery</a>
-          <a ng-hide="navCtrl.isLoggedIn()" ui-sref="login">Log In</a>
-          <a ng-hide="navCtrl.isLoggedIn()" ui-sref="signup">Sign Up</a>
-          <a ng-show="navCtrl.isLoggedIn()" class="dropdown-button collapsible-header" data-activates="logged-in-dropdown">Log Out</a>
-        </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <a ng-show="navCtrl.isLoggedIn()" ui-sref="newPhoto">New Photo</a>
+        <a ng-show="navCtrl.isLoggedIn()" ui-sref="photos">Gallery</a>
+        <a ng-hide="navCtrl.isLoggedIn()" ui-sref="login">Log In</a>
+        <a ng-hide="navCtrl.isLoggedIn()" ui-sref="signup">Sign Up</a>
+        <a ng-show="navCtrl.isLoggedIn()" ng-click="navCtrl.logout()">Log Out</a>
+      </ul>
 
     <div ui-view class="container"></div>
 
