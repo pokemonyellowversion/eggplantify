@@ -32,14 +32,16 @@
   <body ng-controller="NavController as navCtrl">
     
     <ul id="logged-out-dropdown" class="dropdown-content">
-      <li ng-click="navCtrl.login()">Log In</li>
-      <li ng-click="navCtrl.signup()">Sign Up</li>
+      <li ui-sref="login">Log In</li>
+      <li class="divider"></li>
+      <li ui-sref="signup">Sign Up</li>
     </ul>
 
-    <!-- <ul id="logged-in-dropdown" class="dropdown-content">
+    <ul id="logged-in-dropdown" class="dropdown-content">
       <li>{{navCtrl.getUser().name}}</li>
+      <li class="divider"></li>
       <li ng-click="navCtrl.logout()">Log Out</li>
-    </ul> -->
+    </ul>
 
     <div class="navbar-fixed">
       <nav>
@@ -48,15 +50,16 @@
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           
           <ul class="nav-icons right hide-on-med-and-down">
-            <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a href="#" id="new-photo" ui-sref="newPhoto"><image src="/images/new-photo.png"></a></li>
-            <li ng-show="navCtrl.isLoggedIn()" ui-sref-active="active"><a id="gallery" ui-sref="photos"><image src="/images/gallery.png"></a></li>
-            <li ng-hide="navCtrl.isLoggedIn()"><a class="dropdown-button" href="#!" data-activates="logged-out-dropdown"><image src="/images/logged-out.png"></a></li>
-            <li ng-show="navCtrl.isLoggedIn()"><a class="dropdown-button collapsible-header" href="#!" data-activates="logged-in-dropdown"><image src="/images/logged-in.png"></a></li>
+            <li ng-show="navCtrl.isLoggedIn()"><a id="new-photo" ui-sref="newPhoto"><image src="/images/new-photo.png"></a></li>
+            <li ng-show="navCtrl.isLoggedIn()"><a id="gallery" ui-sref="photos"><image src="/images/gallery.png"></a></li>
+            <li ng-hide="navCtrl.isLoggedIn()"><a class="dropdown-button" data-activates="logged-out-dropdown"><image src="/images/logged-out.png"></a></li>
+            <li ng-show="navCtrl.isLoggedIn()"><a class="dropdown-button" data-activates="logged-in-dropdown"><image src="/images/logged-in.png"></a></li>
           </ul>
           
         </div>
       </nav>
     </div>
+
       <ul class="side-nav" id="mobile-demo">
         <a ng-show="navCtrl.isLoggedIn()" ui-sref="newPhoto">New Photo</a>
         <a ng-show="navCtrl.isLoggedIn()" ui-sref="photos">Gallery</a>
